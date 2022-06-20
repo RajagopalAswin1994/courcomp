@@ -22,4 +22,8 @@ from courcompadmin import views as siteadmin
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',sitehome.home),
+    path('courselist',sitehome.courselist),
+    path('courcompadmin/',siteadmin.courseadmin),
+    path('categories/',siteadmin.categories),
+    
 ]
