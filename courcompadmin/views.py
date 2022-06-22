@@ -6,3 +6,12 @@ def courseadmin(request):
     
 def categories(request):
     return render(request,'courcompadmin/categories.html')
+
+def dashboard(request):
+    return render(request,'courcompadmin/dashboard.html')
+
+def companies(request):
+    return render(request,'courcompadmin/companies.html')
+
+def courses(request):
+    return render(request,'courcompadmin/courses.html')

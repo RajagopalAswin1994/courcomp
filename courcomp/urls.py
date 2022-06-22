@@ -25,5 +25,8 @@ urlpatterns = [
     path('courselist',sitehome.courselist),
     path('courcompadmin/',siteadmin.courseadmin),
     path('categories/',siteadmin.categories),
+    path('dashboard/',siteadmin.dashboard),
+    path('companies/',siteadmin.companies),
+    path('courses/',siteadmin.courses)
     
 ]

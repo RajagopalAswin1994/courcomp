@@ -1,145 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
 {% load static %}
-<head> 
 
-    <!-- Basic Page Needs
-    ================================================== -->
-    <title>Courseplus Template</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Courseplus is - Professional A unique and beautiful collection of UI elements">
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="light" data-sidebar-size="lg">
 
-    <!-- Favicon -->
-    <link href="{% static 'images/favicon.png' %}"rel="icon" type="image/png">
 
-    <!-- icons
-    ================================================== -->
-    <link rel="stylesheet" href="{% static 'css/icons.css' %}">
+<head>
 
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="{% static 'css/uikit.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="{% static 'css/tailwind.min.css' %}" rel="stylesheet">
- 
-   
+    <meta charset="utf-8" />
+    <title>Dashboard | Velzon - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{% static 'admin/images/favicon.ico' %}">
+    <!-- Sweet Alert css-->
+    <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- jsvectormap css -->
+    <link href="{% static 'admin/libs/jsvectormap/css/jsvectormap.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!--Swiper slider css-->
+    <link href="{% static 'admin/libs/swiper/swiper-bundle.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- Layout config Js -->
+    <script src="{% static 'admin/js/layout.js' %}"></script>
+    <!-- Bootstrap Css -->
+    <link href="{% static 'admin/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{% static 'admin/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{% static 'admin/css/app.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="{% static 'admin/css/custom.min.css' %}" rel="stylesheet" type="text/css" />
+
+
 </head>
 
 <body>
-     
 
-    <div id="wrapper" class="is-verticle admin-panel">
-    <!--  Header  -->
-        {% include "./header.html" %}  
-        <div class="main_content">
-            <div class="container">
-                {% block categories %} {% endblock categories %}
-           
-            </div>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
 
-             <!-- footer -->
+        {% include "./header.html" %}
+        <!-- ========== App Menu ========== -->
+        {% include "./sidebar.html" %}
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+         {% block dashboard %}
+         
+         {% endblock dashboard %}
+         {% block categories %}
+         
+         {% endblock categories %}
         {% include "./footer.html" %}
-         </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <div class="customizer-setting d-none d-md-block">
+        <div class="btn-primary btn-rounded shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
+            <i class='mdi mdi-spin mdi-cog-outline fs-22'></i>
+        </div>
     </div>
 
-    <!-- sidebar -->
-    {% include "./sidebar.html" %}
-        
-    
+    <!-- Theme Settings -->
+    <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="theme-settings-offcanvas">
+    {% include "./themecustomize.html" %}
+    </div>
 
- 
-    <!-- Javascript
-    ================================================== -->
-    <script src="{% static 'jquery-3.6.0.min.js' %}" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="{% static 'js/uikit.min.js' %}"></script>
-    <script src="{% static 'js/uikit.js' %}"></script>
-    <script src="{% static 'js/tippy.all.min.js' %}"></script>
-    <script src="{% static 'js/simplebar.js' %}"></script>
-    <script src="{% static 'custom.j' %}s"></script>
-    <script src="{% static 'js/bootstrap-select.min.js' %}"></script>
-    <script src="{% static 'ionicons.js' %}"></script>
- 
+    <!-- JAVASCRIPT -->
+    <script src="{% static 'admin/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'admin/libs/simplebar/simplebar.min.js' %}"></script>
+    <script src="{% static 'admin/libs/node-waves/waves.min.js' %}"></script>
+    <script src="{% static 'admin/libs/feather-icons/feather.min.js' %}"></script>
+    <script src="{% static 'admin/js/pages/plugins/lord-icon-2.1.0.js' %}"></script>
+    <script src="{% static 'admin/js/plugins.js' %}"></script>
 
+    <!-- prismjs plugin -->
+    <script src="{% static 'admin/libs/prismjs/prism.js'%}"></script>
+    <script src="{% static 'admin/libs/list.js/list.min.js'%}"></script>
+    <script src="{% static 'admin/libs/list.pagination.js/list.pagination.min.js'%}"></script>
 
-    
-    
-    <script src="{% static 'js/chart.min.js' %}"></script>
-    <script>
-        Chart.defaults.global.defaultFontFamily = "Inter";
-        Chart.defaults.global.defaultFontColor = '#888';
-        Chart.defaults.global.defaultFontSize = '14';
-    
-        var ctx = document.getElementById('chart').getContext('2d');
-    
-        var chart = new Chart(ctx, {
-            type: 'line',
-    
-            // The data for our dataset
-            data: {
-                labels: ["January", "February", "March", "April", "May", "June"],
-                // Information about the dataset
-                   datasets: [{
-                    label: "Sales",
-                    backgroundColor: 'rgba(42,65,232,0.08)',
-                    borderColor: '#2a41e8',
-                    borderWidth: "3",
-                    data: [196,132,215,362,210,252],
-                    pointRadius: 5,
-                    pointHoverRadius:5,
-                    pointHitRadius: 10,
-                    pointBackgroundColor: "#fff",
-                    pointHoverBackgroundColor: "#fff",
-                    pointBorderWidth: "2",
-                }]
-            },
-    
-            // Configuration options
-            options: {
-    
-                layout: {
-                  padding: 10,
-                  },
-    
-                legend: { display: false },
-                title:  { display: false },
-    
-                scales: {
-                    yAxes: [{
-                        scaleLabel: {
-                            display: false
-                        },
-                        gridLines: {
-                             borderDash: [6, 10],
-                             color: "#d8d8d8",
-                             lineWidth: 1,
-                        },
-                    }],
-                    xAxes: [{
-                        scaleLabel: { display: false },  
-                        gridLines:  { display: false },
-                    }],
-                },
-    
-                tooltips: {
-                  backgroundColor: '#333',
-                  titleFontSize: 13,
-                  titleFontColor: '#fff',
-                  bodyFontColor: '#fff',
-                  bodyFontSize: 13,
-                  displayColors: false,
-                  xPadding: 10,
-                  yPadding: 10,
-                  intersect: false
-                }
-            },
-    
-    
-    });
-    
-    </script>
+    <!-- apexcharts -->
+    <script src="{% static 'admin/libs/apexcharts/apexcharts.min.js' %}"></script>
 
+     <!-- listjs init -->
+    <script src="{% static 'admin/js/pages/listjs.init.js'%}"></script>
 
+    <!-- Vector map-->
+    <script src="{% static 'admin/libs/jsvectormap/js/jsvectormap.min.js' %}"></script>
+    <script src="{% static 'admin/libs/jsvectormap/maps/world-merc.js' %}"></script>
 
+    <!--Swiper slider js-->
+    <script src="{% static 'admin/libs/swiper/swiper-bundle.min.js' %}"></script>
+
+     <!-- Sweet Alerts js -->
+    <script src="{% static 'admin/libs/sweetalert2/sweetalert2.min.js'%}"></script>
+
+    <!-- Dashboard init -->
+    <script src="{% static 'admin/js/pages/dashboard-ecommerce.init.js' %}"></script>
+
+    <!-- App js -->
+    <script src="{% static 'admin/js/app.js' %}"></script>
 </body>
+
+
 </html>
