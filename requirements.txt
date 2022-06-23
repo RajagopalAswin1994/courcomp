@@ -1,2 +1,2 @@
 django
-MySQLdb
+MySQL-python
