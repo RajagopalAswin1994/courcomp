@@ -17,7 +17,8 @@ from django import views
 from django.contrib import admin
 from django.urls import path
 from courcomphome import views as sitehome
-from courcompadmin import views as siteadmin
+from courcompadmin import views as siteadmin 
+from courcompadmin import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +28,8 @@ urlpatterns = [
     path('categories/',siteadmin.categories),
     path('dashboard/',siteadmin.dashboard),
     path('companies/',siteadmin.companies),
-    path('courses/',siteadmin.courses)
+    path('courses/',siteadmin.courses),
+    path('enquiry/',siteadmin.enquiry),
+    path('enrollments/',siteadmin.enrollments)
     
 ]
