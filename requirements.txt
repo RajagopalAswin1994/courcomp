@@ -1,0 +1,5 @@
+django
+MySQL-python
+pip
+ez_setup
+ConfigParser
