@@ -1,0 +1,81 @@
+
+{% load static %}
+<div class="tube-card p-4 mt-3" uk-toggle="cls: tube-card p-4; mode: media; media: 640">
+
+                <h4 class="py-3 px-5 border-b font-semibold text-grey-700 -mx-4 -mt-3 mb-4"> Latest Episodes </h4>
+
+                <div class="relative -mx-1" uk-slider="finite: true">
+            
+                        <div class="uk-slider-container md:px-1 px-2 py-3">
+                            <ul class="uk-slider-items uk-child-width-1-3@m uk-child-width-1-2 uk-grid-small uk-grid">
+                                <li>
+                                    <a href="episodes-watch.html">
+                                        <div class="w-full md:h-40 h-28 overflow-hidden rounded-lg relative">
+                                            <img src="{% static 'images/episodes/img-2.jpg' %}" alt="" class="w-full h-full absolute inset-0 object-cover">
+                                            <span
+                                                class="absolute bottom-2 right-2 px-2 py-1 text-xs font-semibold bg-black bg-opacity-50 text-white rounded">
+                                                12:21</span>
+                                            <img src="{% static 'images/icon-play.svg' %}" class="w-12 h-12 uk-position-center" alt="">
+                                        </div>
+                                    </a>
+                                    <div class="pt-3">
+                                        <a href="episodes-watch.html" class="font-semibold line-clamp-2">  The PHP Singleton class  </a>
+                                        <p class="text-sm pt-1"> By <a href="#"> Stella Johnson  </a> </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="episodes-watch.html">
+                                        <div class="w-full md:h-40 h-28 overflow-hidden rounded-lg relative">
+                                            <img src="{% static 'images/episodes/img-4.jpg'%}" alt="" class="w-full h-full absolute inset-0 object-cover">
+                                            <span class="absolute bottom-2 right-2 px-2 py-1 text-xs font-semibold bg-black bg-opacity-50 text-white rounded">
+                                                12:21</span>
+                                            <img src="{% static 'images/icon-play.svg' %}" class="w-12 h-12 uk-position-center" alt="">
+                                        </div>
+                                    </a>
+                                    <div class="pt-3">
+                                        <a href="episodes-watch.html" class="font-semibold line-clamp-2">  Larafel $ fliepond   </a>
+                                        <p href="episodes-watch.html" class="text-sm pt-1"> By <a href="#"> Jesse Stevens </a> </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="episodes-watch.html">
+                                        <div class="w-full md:h-40 h-28 overflow-hidden rounded-lg relative">
+                                            <img src="{% static 'images/episodes/img-1.jpg' %}" alt="" class="w-full h-full absolute inset-0 object-cover">
+                                            <span class="absolute bottom-2 right-2 px-2 py-1 text-xs font-semibold bg-black bg-opacity-50 text-white rounded">
+                                                12:21</span>
+                                            <img src="{% static 'images/icon-play.svg' %}" class="w-12 h-12 uk-position-center" alt="">
+                                        </div>
+                                    </a>
+                                    <div class="pt-3">
+                                        <a href="episodes-watch.html" class="font-semibold line-clamp-2">  Creating a Laravel Package   </a>
+                                        <p class="text-sm pt-1"> By <a href="#"> John Michael </a> </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="episodes-watch.html">
+                                        <div class="w-full md:h-40 h-28 overflow-hidden rounded-lg relative">
+                                            <img src="{% static 'images/episodes/img-3.jpg' %}" alt="" class="w-full h-full absolute inset-0 object-cover">
+                                            <span class="absolute bottom-2 right-2 px-2 py-1 text-xs font-semibold bg-black bg-opacity-50 text-white rounded">
+                                                12:21</span>
+                                            <img src="{% static 'images/icon-play.svg' %}" class="w-12 h-12 uk-position-center" alt="">
+                                        </div>
+                                    </a>
+                                    <div class="pt-3">
+                                        <a href="episodes-watch.html" class="font-semibold line-clamp-2">  Creating sticky in HTML   </a>
+                                        <p class="text-sm pt-1"> By <a href="#"> Monroe Parker </a> </p>
+                                    </div>
+                                </li> 
+                            </ul>
+            
+                        <a class="absolute bg-white bottom-1/2 flex items-center justify-center p-2 -left-4 rounded-full shadow-md text-xl w-9 z-10 dark:bg-gray-800 dark:text-white"
+                        href="#" uk-slider-item="previous"> <i class="icon-feather-chevron-left"></i></a>
+                    <a class="absolute bg-white bottom-1/2 flex items-center justify-center p-2 -right-4 rounded-full shadow-md text-xl w-9 z-10 dark:bg-gray-800 dark:text-white"
+                        href="#" uk-slider-item="next"> <i class="icon-feather-chevron-right"></i></a>
+                        </div>
+            
+                </div>
+
+            </div>
+
+
+

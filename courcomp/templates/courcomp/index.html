@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+{% load static %}
+<head> 
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <title>Courseplus Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Courseplus is - Professional A unique and beautiful collection of UI elements">
+
+    <!-- Favicon -->
+    <link href="{% static 'home/images/favicon.png' %}" rel="icon" type="image/png">
+
+    <!-- icons
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'home/css/icons.cs' %}s">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'home/css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <link href="{% static 'home/css/tailwind.min.css '%}" rel="stylesheet">
+
+</head>
+
+<body>
+    
+
+    <div id="wrapper" class="horizontal">         
+  
+        <!--  Header  -->
+     {% include "./header.html" %}
+
+        <!-- Slideshow -->
+        {% include "./slideshow.html" %}
+        
+      
+        <div class="mx-auto max-w-5xl p-4">
+            
+            {% include "./browsecategories.html"%}
+
+            <!--  course feature -->
+            {% include "./featuredcourse.html"%}
+
+
+            <!--  slider courses --> 
+            {% include "./popularcourses.html" %}
+
+        </div>
+
+        <!-- footer -->
+    {% include "./footer.html" %}
+
+  
+         
+    </div>
+    
+    
+    
+           
+    
+    <!-- Javascript
+    ================================================== -->
+    <script src="{% static 'home/js/jquery-3.6.0.min.js'%}" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="{%static 'cdn.jsdelivr.net/npm/uikit%403.7.6/dist/js/uikit.min.js'%}"></script>
+    <script src="{% static 'home/js/uikit.js' %}"></script>
+    <script src="{% static 'home/js/tippy.all.min.js' %}"></script>
+    <script src="{% static 'home/js/simplebar.js' %}"></script>
+    <script src="{% static 'home/js/custom.js' %}"></script>
+    <script src="{% static 'home/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'home/js/ionicons.js'%}"></script>
+</body>
+
+
+</html>
