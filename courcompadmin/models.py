@@ -1,5 +1,6 @@
 from pyexpat import model
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 class Enquiry_DB(models.Model):
@@ -34,7 +35,10 @@ class Course_Details(models.Model):
     course_through = models.CharField(max_length = 75)
     course_type = models.CharField(max_length = 75)
     course_category = models.CharField(max_length = 75)
+    course_plans = models.ImageField()
 
 class Company_Details(models.Model):
     comapany_name = models.CharField(max_length = 75)
     courses_provided = models.CharField(max_length = 75)
+    phone_number = PhoneNumberField()
+    email_id = models.EmailField()

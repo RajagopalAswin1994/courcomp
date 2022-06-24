@@ -3,3 +3,5 @@ MySQL-python
 pip
 ez_setup
 ConfigParser
+django-phonenumber-field
+django-phonenumber-field[phonenumbers]

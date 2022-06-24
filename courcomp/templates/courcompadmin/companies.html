@@ -60,26 +60,28 @@
                                                                 <input class="form-check-input" type="checkbox" id="checkAll" value="option">
                                                             </div>
                                                         </th>
-                                                        <th class="sort" data-sort="customer_name">Customer</th>
-                                                        <th class="sort" data-sort="email">Email</th>
+                                                        <th class="sort" data-sort="sno">SNo.</th>
+                                                        <th class="sort" data-sort="company_name">Company Name</th>
+                                                        <th class="sort" data-sort="courses_provided">Courses Provided</th>
                                                         <th class="sort" data-sort="phone">Phone</th>
                                                         <th class="sort" data-sort="date">Joining Date</th>
-                                                        <th class="sort" data-sort="status">Delivery Status</th>
+                                                        <th class="sort" data-sort="status">Status</th>
                                                         <th class="sort" data-sort="action">Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="list form-check-all">
+                                                    {% for company in companies %} 
                                                     <tr>
                                                         <th scope="row">
                                                             <div class="form-check">
                                                                 <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
                                                             </div>
                                                         </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                        <td class="customer_name">Mary Cousar</td>
-                                                        <td class="email">marycousar@velzon.com</td>
-                                                        <td class="phone">580-464-4694</td>
-                                                        <td class="date">06 Apr, 2021</td>
+                                                        <td class="sno">{{ forloop.counter}}</td>
+                                                        <td class="company_name">{{company.comapany_name}}</td>
+                                                        <td class="courses_provided">{{company.courses_provided}}</td>
+                                                        <td class="phone_number">{{company.phone_number}}</td>
+                                                        <td class="email_id">{{company.email_id}}</td>
                                                         <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>
                                                         <td>
                                                             <div class="d-flex gap-2">
@@ -92,6 +94,7 @@
                                                             </div>
                                                         </td>
                                                     </tr>
+                                                    {% endfor %}
                                                 </tbody>
                                             </table>
                                             <div class="noresult" style="display: none">

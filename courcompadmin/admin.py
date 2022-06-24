@@ -13,7 +13,7 @@ class Course_Details_Admin(admin.ModelAdmin):
     list_display = ['course_name','price','duration','duration_type','Features','course_through','course_type','course_category']
 
 class Company_Details_Admin(admin.ModelAdmin):
-    list_display = ['comapany_name','courses_provided']
+    list_display = ['comapany_name','courses_provided','phone_number','email_id']
 
 
 admin.site.register(Enquiry_DB, Enquiry_Admin)
