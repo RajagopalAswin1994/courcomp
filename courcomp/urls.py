@@ -20,7 +20,6 @@ from courcomphome import views as sitehome
 from courcompadmin import views as siteadmin 
 from courcompadmin import views
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',sitehome.home),
