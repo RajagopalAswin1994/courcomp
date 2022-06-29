@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from pyexpat import model
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
@@ -31,14 +32,18 @@ class Course_Details(models.Model):
     price = models.IntegerField()
     duration = models.IntegerField()
     duration_type = models.CharField(max_length = 75)
-    Features = models.CharField(max_length = 250)
     course_through = models.CharField(max_length = 75)
     course_type = models.CharField(max_length = 75)
     course_category = models.CharField(max_length = 75)
-    course_plans = models.ImageField()
 
 class Company_Details(models.Model):
     comapany_name = models.CharField(max_length = 75)
     courses_provided = models.CharField(max_length = 75)
     phone_number = PhoneNumberField()
     email_id = models.EmailField()
+    contact_person = models.CharField(max_length=75,default='not updated')
+
+class Company_Features(models.Model):
+    company_name = models.CharField(max_length=75)
+    feature_name = models.CharField(max_length=75)
+    feature_value = models.CharField(max_length=75)
