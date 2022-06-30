@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 from email.policy import default
-=======
-from distutils.command.upload import upload
->>>>>>> refs/remotes/origin/master
 from pyexpat import model
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
