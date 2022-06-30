@@ -139,6 +139,7 @@
                                 </div>
                                 <form method='post' enctype='multipart/form-data'>
                                     {% csrf_token %}
+                                    {{ course_form.as_p }}
                                     <div class="modal-body">
 
                                         <div class="mb-3" id="modal-id" style="display: none;">
@@ -175,7 +176,7 @@
                                             </select>
                                         </div>
 
-                                        {{ course_form.as_p }}
+                                        
                                     </div>
                                     <div class="modal-footer">
                                         <div class="hstack gap-2 justify-content-end">
