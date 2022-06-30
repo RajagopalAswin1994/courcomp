@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from email.policy import default
+=======
+from distutils.command.upload import upload
+>>>>>>> refs/remotes/origin/master
 from pyexpat import model
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
@@ -60,12 +64,14 @@ class Course_Details(models.Model):
     price = models.IntegerField()
     duration = models.IntegerField()
     duration_type = models.CharField(max_length = 75)
-    Features = models.CharField(max_length = 250)
     course_through = models.CharField(max_length = 75)
     course_type = models.CharField(max_length = 75)
     course_category = models.CharField(max_length = 75)
+<<<<<<< HEAD
     course_banner = models.ImageField(upload_to='uploads/',default=null)
     
+=======
+>>>>>>> refs/remotes/origin/master
 
 class Company_Details(models.Model):
     institute_id = models.CharField(max_length=8,default='NA')
@@ -73,6 +79,9 @@ class Company_Details(models.Model):
     courses_provided = models.CharField(max_length = 75)
     phone_number = PhoneNumberField()
     email_id = models.EmailField()
+    contact_person = models.CharField(max_length=75,default='not updated')
 
-    def __str__(self):
-        return f"{self.comapany_name}"
+class Company_Features(models.Model):
+    company_name = models.CharField(max_length=75)
+    feature_name = models.CharField(max_length=75)
+    feature_value = models.CharField(max_length=75)
