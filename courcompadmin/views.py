@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from courcompadmin.models import *
+from courcompadmin.forms import *
 
 # Create your views here.
 def courseadmin(request):
@@ -17,8 +18,9 @@ def companies(request):
     return render(request,'courcompadmin/companies.html',{'companies':Companies})
 
 def courses(request):
-    Courses = Company_Details.objects.all()
-    return render(request,'courcompadmin/courses.html',{'courses':Courses})
+    # Courses = Company_Details.objects.all()'courses':Courses,
+    course_form = Course_Details_Form()
+    return render(request,'courcompadmin/courses.html',{'course_form':course_form})
 
 def enquiry(request):
     Enquires = Enquiry_DB.objects.all()    

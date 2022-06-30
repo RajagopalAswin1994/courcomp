@@ -137,7 +137,8 @@
                                     <h5 class="modal-title" id="exampleModalLabel"></h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
                                 </div>
-                                <form>
+                                <form method='post' enctype='multipart/form-data'>
+                                    {% csrf_token %}
                                     <div class="modal-body">
 
                                         <div class="mb-3" id="modal-id" style="display: none;">
@@ -173,6 +174,8 @@
                                                 <option value="Block">Block</option>
                                             </select>
                                         </div>
+
+                                        {{ course_form.as_p }}
                                     </div>
                                     <div class="modal-footer">
                                         <div class="hstack gap-2 justify-content-end">

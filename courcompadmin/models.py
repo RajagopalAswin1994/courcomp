@@ -1,6 +1,8 @@
+from email.policy import default
 from pyexpat import model
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+from sqlalchemy import null
 
 # Create your models here.
 class Enquiry_DB(models.Model):
@@ -62,6 +64,7 @@ class Course_Details(models.Model):
     course_through = models.CharField(max_length = 75)
     course_type = models.CharField(max_length = 75)
     course_category = models.CharField(max_length = 75)
+    course_banner = models.ImageField(upload_to='uploads/',default=null)
     
 
 class Company_Details(models.Model):
