@@ -71,7 +71,7 @@ class Company_Details(models.Model):
     institute_id = models.CharField(max_length=8,default='NA')
     comapany_name = models.CharField(max_length = 75)
     courses_provided = models.CharField(max_length = 75)
-    phone_number = PhoneNumberField()
+    phone_number = models.CharField(max_length = 13,default='NA')
     email_id = models.EmailField()
     contact_person = models.CharField(max_length=75,default='not updated')
 
