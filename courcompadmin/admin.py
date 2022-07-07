@@ -10,7 +10,7 @@ class Course_Categories_Admin(admin.ModelAdmin):
    list_display = ['category_name','course_name']
 
 class Course_Details_Admin(admin.ModelAdmin):
-    list_display = ['course_id', 'institute_id', 'course_name', 'What_you_learn', 'description', 'price', 'duration', 'duration_type', 'course_through', 'course_type', 'course_category', 'course_banner' ]
+    list_display = ['course_id', 'institute_id', 'course_name', 'What_you_learn', 'description', 'price', 'duration', 'duration_type', 'course_through', 'course_type', 'course_category' ]
 
 class Company_Details_Admin(admin.ModelAdmin):
     list_display = ['comapany_name','courses_provided','phone_number','email_id','contact_person']

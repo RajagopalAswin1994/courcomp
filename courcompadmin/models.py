@@ -64,7 +64,7 @@ class Course_Details(models.Model):
     course_through = models.CharField(max_length = 75)
     course_type = models.CharField(max_length = 75)
     course_category = models.CharField(max_length = 75)
-    course_banner = models.ImageField(upload_to='uploads')
+    # course_banner = models.ImageField(upload_to='uploads')
     
 
 class Company_Details(models.Model):
@@ -73,7 +73,7 @@ class Company_Details(models.Model):
     courses_provided = models.CharField(max_length = 75)
     phone_number = models.CharField(max_length = 13,default='NA')
     email_id = models.EmailField()
-    contact_person = models.CharField(max_length=75,default='not updated')
+    contact_person = models.CharField(max_length=75,default='NA')
 
 class Company_Features(models.Model):
     company_name = models.CharField(max_length=75)

@@ -33,7 +33,7 @@ def companies(request):
    
 
 def courses(request):
-    Courses = Company_Details.objects.all()
+    Courses = Course_Details.objects.all()
     course_form = Course_Details_Form()
     if request.method == 'POST':
         form = Course_Details_Form(request.POST)
@@ -41,7 +41,7 @@ def courses(request):
             form.save()
             return render(request,'courcompadmin/courses.html',{'courses':Courses,'course_form':course_form})
     else:
-            return render(request,'courcompadmin/courses.html',{'courses':Courses,'course_form':course_form})
+        return render(request,'courcompadmin/courses.html',{'courses':Courses,'course_form':course_form})
         
     
 def enquiry(request):

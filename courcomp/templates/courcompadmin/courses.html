@@ -60,27 +60,32 @@
                                                                 <input class="form-check-input" type="checkbox" id="checkAll" value="option">
                                                             </div>
                                                         </th>
-                                                        <th class="sort" data-sort="customer_name">Customer</th>
-                                                        <th class="sort" data-sort="email">Email</th>
-                                                        <th class="sort" data-sort="phone">Phone</th>
-                                                        <th class="sort" data-sort="date">Joining Date</th>
-                                                        <th class="sort" data-sort="status">Delivery Status</th>
+                                                        <th class="sort" data-sort="sno">Sno</th>
+                                                        <th class="sort" data-sort="course_id">Course ID</th>
+                                                        <th class="sort" data-sort="course_name">Course Name</th>
+                                                        <th class="sort" data-sort="institute_id">Institute ID</th>
+                                                        <th class="sort" data-sort="duration">Duration</th>
+                                                        <th class="sort" data-sort="course_category">Course Category</th>
+                                                        <th class="sort" data-sort="course_through">Course Through</th>
                                                         <th class="sort" data-sort="action">Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="list form-check-all">
+                                                {% for course in courses %}
+                                               
                                                     <tr>
                                                         <th scope="row">
                                                             <div class="form-check">
                                                                 <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
                                                             </div>
                                                         </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                        <td class="customer_name">Mary Cousar</td>
-                                                        <td class="email">marycousar@velzon.com</td>
-                                                        <td class="phone">580-464-4694</td>
-                                                        <td class="date">06 Apr, 2021</td>
-                                                        <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>
+                                                        <td class="sno">{{ forloop.counter}}</td>
+                                                        <td class="course_id">{{ course.course_id}}</td>
+                                                        <td class="course_name">{{ course.course_name}}</td>
+                                                        <td class="institute_id">{{ course.institute_id}}</td>
+                                                        <td class="duration">{{ course.duration }} {{ course.duration_type }}</td>
+                                                        <td class="course_category">{{ course.course_category}}</td>
+                                                        <td class="course_through">{{ course.course_through}}</td>                                                                          
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <div class="edit">
@@ -92,6 +97,7 @@
                                                             </div>
                                                         </td>
                                                     </tr>
+                                                {% endfor %}
                                                 </tbody>
                                             </table>
                                             <div class="noresult" style="display: none">
@@ -170,58 +176,66 @@
                                                     {{ course_form.What_you_learn }}
                                                 </div>
                                             </div>
+
                                             <div class = "col-lg-4">
 
                                                 <div class="mb-3">
                                                     <label for="description" class="form-label">Description</label>
-                                                    <input type="textarea" id="description" class="form-control" placeholder="Description" required />
+                                                    {% comment %} <input type="text" id="course_id" class="form-control" placeholder="Course ID" required /> {% endcomment %}
+                                                    {{ course_form.description }}
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label for="price" class="form-label">Price</label>
-                                                    <input type="number" id="price" class="form-control" placeholder="Enter Name" required />
-                                                </div>
+                                                    {{ course_form.price }}
+                                                    {% comment %} <select class="form-control" data-trigger name="institute_id" id="institute_id">
+                                                        <option value="">Status</option>                                                       
+                                                    </select> {% endcomment %}
+                                                </div> 
 
                                                 <div class="mb-3">
                                                     <label for="duration" class="form-label">Duration</label>
-                                                    <input type="email" id="duration" class="form-control" placeholder="Duration" required />
+                                                    {% comment %} <input type="text" id="course_name" class="form-control" placeholder="Course Name" required /> {% endcomment %}
+                                                    {{ course_form.duration }}
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label for="duration_type" class="form-label">Duration Type</label>
-                                                    <select class="form-control" data-trigger name="duration_type" id="duration_type">
-                                                        <option value="year">Year</option> 
-                                                    </select>
+                                                    {% comment %} <input type="text" id="What_you_learn" class="form-control" placeholder="What will Learn" required /> {% endcomment %}
+                                                    {{ course_form.duration_type }}
                                                 </div>
                                             </div>
+
                                             <div class = "col-lg-4">
 
                                                 <div class="mb-3">
                                                     <label for="course_through" class="form-label">Course Through</label>
-                                                    <select class="form-control" data-trigger name="course_through" id="course_through">
-                                                        <option value="year">Year</option> 
-                                                    </select>
+                                                    {% comment %} <input type="text" id="course_id" class="form-control" placeholder="Course ID" required /> {% endcomment %}
+                                                    {{ course_form.course_through }}
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label for="course_type" class="form-label">Course Type</label>
-                                                    <select class="form-control" data-trigger name="course_type" id="course_type">
-                                                        <option value="year">Year</option> 
-                                                    </select>
-                                                </div>
+                                                    {{ course_form.course_type }}
+                                                    {% comment %} <select class="form-control" data-trigger name="institute_id" id="institute_id">
+                                                        <option value="">Status</option>                                                       
+                                                    </select> {% endcomment %}
+                                                </div> 
 
                                                 <div class="mb-3">
-                                                    <label for="course_category" class="form-label">Category</label>
-                                                    <select class="form-control" data-trigger name="course_category" id="course_category">
-                                                        <option value="year">Year</option> 
-                                                    </select>
+                                                    <label for="course_category" class="form-label">Course Category</label>
+                                                    {% comment %} <input type="text" id="course_name" class="form-control" placeholder="Course Name" required /> {% endcomment %}
+                                                    {{ course_form.course_category }}
                                                 </div>
 
-                                                <div class="mb-3">
+                                                {% comment %} <div class="mb-3">
                                                     <label for="course_banner" class="form-label">Course Banner</label>
-                                                    {{ course_form.course_banner }}
-                                                </div>
+                                                    {% comment %} <input type="text" id="What_you_learn" class="form-control" placeholder="What will Learn" required /> {% endcomment %}
+                                                    {% comment %} {{ course_form.course_banner }} {% endcomment %}
+                                                {% comment %} </div>   {% endcomment %}
                                             </div>
+
+                                             
                                         </div>
                                         
                                     </div>
