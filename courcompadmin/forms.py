@@ -20,7 +20,7 @@ class Course_Details_Form(forms.ModelForm):
             'course_through': forms.TextInput(attrs={'class':'form-control'}),
             'course_type': forms.TextInput(attrs={'class':'form-control'}),
             'course_category': forms.TextInput(attrs={'class':'form-control'}),
-            'course_banner': forms.ImageField()
+            # 'course_banner': forms.ImageField()
             
         }       
 
