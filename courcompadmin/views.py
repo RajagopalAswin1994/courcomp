@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from courcompadmin.models import *
 from courcompadmin.forms import *
 
@@ -32,15 +32,16 @@ def companies(request):
         return render(request,'courcompadmin/companies.html',{'companies':Companies,'companyform':CompaniesForm})
    
 
-def courses(request):
-    Courses = Course_Details.objects.all()
-    course_form = Course_Details_Form()
+def courses(request,*args, **kwargs):
+    Courses = Course_Details.objects.all()   
     if request.method == 'POST':
-        form = Course_Details_Form(request.POST)
+        course_form = Course_Details_Form()
+        form = Course_Details_Form(request.POST,request.FILES,instance=instance)
         if form.is_valid():
             form.save()
             return render(request,'courcompadmin/courses.html',{'courses':Courses,'course_form':course_form})
     else:
+        course_form = Course_Details_Form()
         return render(request,'courcompadmin/courses.html',{'courses':Courses,'course_form':course_form})
         
     

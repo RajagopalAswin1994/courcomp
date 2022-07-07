@@ -64,7 +64,8 @@ class Course_Details(models.Model):
     course_through = models.CharField(max_length = 75)
     course_type = models.CharField(max_length = 75)
     course_category = models.CharField(max_length = 75)
-    # course_banner = models.ImageField(upload_to='uploads')
+    course_banner = models.ImageField(upload_to='uploads/')
+    
     
 
 class Company_Details(models.Model):
